@@ -23,7 +23,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         chrome.tabs.create({ url: destinationSite });
       }
       
-      if (titleKeywords.length > 0 && tab.url.includes("youtube.com/watch")) {
+      if (titleKeywords && tab.url.includes("youtube.com/watch")) {
         const tabTitle = tab.title.toLowerCase();
         if (tabTitle.includes(titleKeywords.toLowerCase())) {
           chrome.tabs.create({ url: destinationSite });
