@@ -1,18 +1,22 @@
 // Get references to the HTML elements
 const triggerSiteInput = document.getElementById('triggerSite');
 const destinationSiteInput = document.getElementById('destinationSite');
+const titleKeywordsInput = document.getElementById('titleKeywords');
 const saveButton = document.getElementById('save');
 const statusDiv = document.getElementById('status');
 
 // Load saved settings when the popup opens
 document.addEventListener('DOMContentLoaded', () => {
   // Use chrome.storage.sync to get the saved URLs
-  chrome.storage.sync.get(['triggerSite', 'destinationSite'], (data) => {
+  chrome.storage.sync.get(['triggerSite', 'destinationSite', 'titleKeyowrds'], (data) => {
     if (data.triggerSite) {
       triggerSiteInput.value = data.triggerSite;
     }
     if (data.destinationSite) {
       destinationSiteInput.value = data.destinationSite;
+    }
+    if (data.titleKeywords) {
+      titleKeywordsInput.value = data.titleKeywords;
     }
   });
 });
@@ -21,11 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
 saveButton.addEventListener('click', () => {
   const triggerSite = triggerSiteInput.value;
   const destinationSite = destinationSiteInput.value;
+  const titleKeywords = titleKeywordsInput.value;
 
   // Basic validation to ensure URLs are not empty
   if (triggerSite && destinationSite) {
     // Save the URLs using chrome.storage.sync
-    chrome.storage.sync.set({ triggerSite, destinationSite }, () => {
+    chrome.storage.sync.set({ triggerSite, destinationSite, titleKeywords }, () => {
       // Display a success message
       statusDiv.textContent = 'Settings saved!';
       // Clear the message after a few seconds
