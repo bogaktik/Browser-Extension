@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Settings",
+  "version": "1.1",
+  "description": "Automatically sets YouTube video speed to 2x and quality to 144p.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

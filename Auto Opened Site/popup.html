@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- The "thinking" part of the page goes here -->
+   <title>Auto Opened Site</title>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            width: 360px;
+        }
+   </style>
+</head>
+<body class="p-4 bg-gray-50">
+  <!-- The visible content of the page goes here -->
+   <div class="space-y-4"> <!-- This class adds space between all the items inside -->
+        <h1 class="text-xl font-semibold text-gray-800">Auto Opened Site</h1>
+        <!-- Trigger Site Input-->
+         <div>
+            <label for="triggerSite" class="block text-sm font-medium text-gray-700">When I visit this site:</label>
+            <input type="text" id="triggerSite" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Enter the site URL">
+         </div>
+
+        <!-- Destination Site Input-->
+         <div>
+            <label for="destinationSite" class="block text-sm font-medium text-gray-700">Automatically open this site:</label>
+            <input type="text" id="destinationSite" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Enter the target site URL">
+        </div>
+
+        <!-- Save Button -->
+         <div>
+            <button id="saveButton" class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Save</button>
+         </div>
+         <div id=""status" class="text-sm text-gray-600"></div>
+   </div>
+   <script src="popup.js"></script>
+</body>
+</html>
