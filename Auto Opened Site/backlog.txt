@@ -1,0 +1,14 @@
+1. Place to manage (e.g., modify, delete) those site-connection.
+2. Remain there when new tab is open or mouse click anything else = focus is left
+3. "Title" input: Have suggestion for potential words
+4. Delete visiting history of destination site(s).
+
+Problem log:
+popup.html
+    - Refused to load the script 'https://cdn.tailwindcss.com/' because it violates the following Content Security Policy 
+    directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:*". 
+    Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback.
+    - Error: 'content_security_policy.extension_pages': Insecure CSP value "https://cdn.tailwindcss.com" in directive 'script-src'.
+    Could not load manifest.
+    - cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS 
+    plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation
