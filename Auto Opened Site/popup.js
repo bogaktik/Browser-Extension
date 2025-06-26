@@ -8,19 +8,6 @@ const titleKeywordsInput = document.getElementById('titleKeywords');
 const saveButton = document.getElementById('saveButton');
 const statusDiv = document.getElementById('status');
 
-// Use chrome.storage.sync to get the saved URLs
-chrome.storage.sync.get(['triggerSite', 'destinationSite', 'titleKeyowrds'], (data) => {
-  if (data.triggerSite) {
-    triggerSiteInput.value = data.triggerSite;
-  }
-  if (data.destinationSite) {
-    destinationSiteInput.value = data.destinationSite;
-  }
-  if (data.titleKeywords) {
-    titleKeywordsInput.value = data.titleKeywords;
-  }
-});
-
 // Save settings when the save button is clicked
 saveButton.addEventListener('click', () => {
   const triggerSite = triggerSiteInput.value;
@@ -44,7 +31,7 @@ saveButton.addEventListener('click', () => {
       setTimeout(() => {
         window.close();
         inputUI.hidden = false;
-      finishUI.hidden = true;
+        finishUI.hidden = true;
       }, 3000);
     });
   } else {
