@@ -17,21 +17,12 @@ saveButton.addEventListener('click', () => {
   // Basic validation to ensure URLs are not empty
   if (( triggerSite || titleKeywords) && destinationSite) {
     // Save the URLs using chrome.storage.sync
-    chrome.storage.sync.set({ triggerSite, destinationSite, titleKeywords }, () => {
-      // Display a success message
-      statusDiv.textContent = 'Settings saved!';
-      // Clear the message after a few seconds
-      setTimeout(() => {
-        statusDiv.textContent = '';
-      }, 3000);
-      
-      // Switch to the finish UI, display it for 3s and close the popup
+    chrome.storage.sync.set({ triggerSite, destinationSite, titleKeywords }, () => {      
+      // Display message for 3s and close the popup
       inputUI.hidden = true;
       finishUI.hidden = false;
       setTimeout(() => {
         window.close();
-        inputUI.hidden = false;
-        finishUI.hidden = true;
       }, 3000);
     });
   } else {
