@@ -2,6 +2,7 @@
 2. Remain there when new tab is open or mouse click anything else = focus is left
 3. "Title" input: Have suggestion for potential words
 4. Delete visiting history of destination site(s).
+5. Check validity of target site and destination site.
 
 Problem log:
 popup.html
@@ -13,4 +14,3 @@ popup.html
     - cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS 
     plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation
     - Display finish ui accordingly.
-    - Check validity of target site and destination site.
