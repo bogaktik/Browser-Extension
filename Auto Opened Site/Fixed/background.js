@@ -8,7 +8,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     const triggerSite = data.triggerSite;
     const destinationSite = data.destinationSite;
     const titleKeywords = data.titleKeywords;
-    console.log(tab.url.includes(triggerSite), tab.url);
 
     // Check if both sites are configured and the current tab's URL includes the trigger site
     // Using .includes() makes it more flexible (e.g., works for http/https and subdomains)
